@@ -1,3 +1,4 @@
+
 const fetchProductDetails = async (barcode) => {
     const apiUrl = `https://world.openfoodfacts.net/api/v2/product/${barcode}`;
   
@@ -48,7 +49,6 @@ const fetchProductDetails = async (barcode) => {
     `;
   };
   
-  // Exemple d'utilisation avec un code-barre
-  const barcode = "3017620422003"; // Exemple : Nutella
-  fetchProductDetails(barcode);
+  
+  
   
