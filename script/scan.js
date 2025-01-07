@@ -30,6 +30,8 @@ Quagga.init(
     Quagga.stop(); // Arrête le scanner après la détection
   });
 
+var barcode = "3019081239237";
+
   
 const fetchProductDetails = async (barcode) => {
   const apiUrl = `https://world.openfoodfacts.net/api/v2/product/${barcode}`;
@@ -66,7 +68,9 @@ const displayProductDetails = (product) => {
   console.log("Image :", product.image_url);
 
   // Exemple d'affichage HTML
-  document.body.innerHTML = `
+
+var section = document.querySelector("section");
+ section.innerHTML = `
     <h1>${product.product_name || "Nom non disponible"}</h1>
     <p><strong>Marque :</strong> ${product.brands || "Non disponible"}</p>
     <p><strong>Ingrédients :</strong> ${product.ingredients_text || "Non disponible"}</p>
@@ -81,9 +85,4 @@ const displayProductDetails = (product) => {
   `;
 };
 
-
-
-
-
-  const barcode = document.querySelector('#barcode-result').textContent; // Exemple : Nutella
-  fetchProductDetails(barcode);
+ 

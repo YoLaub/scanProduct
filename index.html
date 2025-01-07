@@ -11,14 +11,16 @@
     <div id="video-container">
         <div id="scanner"></div>
       </div>
-      <div id="start" onclick="Quagga.init()" > start </div>
+      
       <div id="barcode-result">Placez un code-barre devant la caméra.</div>
+      <button id="start" onclick= fetchProductDetails(barcode)> start</button>
+      <section></section>
 
       
 
       <script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"></script>
       <script src="script/scan.js"></script>
-      <script src="script/api.js"></script>
+
     
 </body>
 </html>
