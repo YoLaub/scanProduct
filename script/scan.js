@@ -9,7 +9,7 @@ Quagga.init(
         }
       },
       decoder: {
-        readers: ["ean_reader", "code_128_reader"] // Supporte EAN et Code128
+        readers: ["ean_reader"] // Supporte EAN
       }
     },
     function (err) {
