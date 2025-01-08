@@ -42,8 +42,8 @@ Quagga.init(
     Quagga.stop(); // Arrête le scanner après la détection
   });
 
-var barcode = document.getElementById('barcode-result').value;
-//var barcode = "5000112611762"
+var barcode = document.getElementById('barcode-result');
+//var barcode = "5449000131836"
 
   
 const fetchProductDetails = async (barcode) => {
