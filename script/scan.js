@@ -30,7 +30,8 @@ Quagga.init(
     Quagga.stop(); // Arrête le scanner après la détection
   });
 
-var barcode = "3019081239237";
+var barcode = document.getElementById('barcode-result').value;
+//var barcode = "5000112611762"
 
   
 const fetchProductDetails = async (barcode) => {
@@ -62,6 +63,7 @@ const fetchProductDetails = async (barcode) => {
 const displayProductDetails = (product) => {
   // Exemple d'affichage dans la console
   console.log("Nom :", product.product_name);
+  console.log("Prix :", product.prices_tags);
   console.log("Marque :", product.brands);
   console.log("Ingrédients :", product.ingredients_text);
   console.log("Nutriments :", product.nutriments);
@@ -72,6 +74,7 @@ const displayProductDetails = (product) => {
 var section = document.querySelector("section");
  section.innerHTML = `
     <h1>${product.product_name || "Nom non disponible"}</h1>
+    <p><strong>Prix :</strong> ${product.prices_tags || "Non disponible"}</p>
     <p><strong>Marque :</strong> ${product.brands || "Non disponible"}</p>
     <p><strong>Ingrédients :</strong> ${product.ingredients_text || "Non disponible"}</p>
     <p><strong>Valeurs nutritionnelles :</strong></p>
