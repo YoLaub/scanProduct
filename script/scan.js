@@ -9,9 +9,21 @@ Quagga.init(
         }
       },
       decoder: {
-        readers: ["ean_reader"] // Supporte EAN
-      }
+        readers: ["ean_reader"],
+        multiple: false, // Ne lit qu'un seul code-barre à la fois
+        debug: {
+          drawBoundingBox: true, // Dessine le cadre détecté (utile pour le débogage)
+          showFrequency: true,
+          drawScanline: true,
+        },
+      },
+      locator: {
+        patchSize: "medium", // Taille des patchs (peut être 'small', 'medium', 'large')
+        halfSample: true,    // Améliore la performance en réduisant la résolution
+      },
+      
     },
+    
     function (err) {
       if (err) {
         console.error("Erreur lors de l'initialisation :", err);
